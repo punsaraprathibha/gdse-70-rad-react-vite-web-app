@@ -9,10 +9,8 @@ type FormData = {
 
 export function Contact() {
 
-    const {register,
-        handleSubmit,
-        formState: { errors
-    }} = useForm<FormData>();
+    const {register, handleSubmit, formState: { errors}}
+        = useForm<FormData>();
 
     const onSubmit = (data: FormData) => {
         console.log('Form data submitted: ', data);
