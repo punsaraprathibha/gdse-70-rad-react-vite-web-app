@@ -9,3 +9,20 @@
     font-size: 2rem;
     display: flex;
 }
+
+.business-name {
+    padding-left: 5px;
+    color: #f0ecec;
+    padding-right: 5px;
+}
+
+.copyright {
+    color: #f0ecec;
+    font-size: 1.5rem;
+    padding-right: 10px;
+}
+
+.icon {
+    height: 3rem;
+    width: 3rem;
+}
