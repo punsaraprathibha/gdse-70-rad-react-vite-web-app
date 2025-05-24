@@ -14,8 +14,7 @@ export function Contact() {
 
     const onSubmit = (data: FormData) => {
         console.log('Form data submitted: ', data);
-        alert(`Submitted your case: 
-        ${data.subject}`);
+        alert(`Submitted your case: ${data.subject}`);
     }
 
     return (
