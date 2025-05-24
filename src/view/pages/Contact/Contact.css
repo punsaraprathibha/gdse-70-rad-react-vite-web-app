@@ -27,3 +27,9 @@
     cursor: pointer;
     margin-top: 10px;
 }
+
+.error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}

@@ -14,10 +14,17 @@ export function Contact() {
         formState: { errors
     }} = useForm<FormData>();
 
+    const onSubmit = (data: FormData) => {
+        console.log('Form data submitted: ', data);
+        alert(`Submitted your case: 
+        ${data.subject}`);
+    }
+
     return (
         <div className="form-container">
             <h2>Contact Us</h2>
-            <form className="contact-form">
+            <form className="contact-form"
+                 onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label>Email: </label>
                     <input type="email"
@@ -29,6 +36,9 @@ export function Contact() {
                             }
                         })
                         }/>
+                    { errors.email ?
+                        <span className="error">{errors.email.message}</span>
+                        : ''}
                 </div>
                 <div className="form-group">
                     <label>Subject: </label>
@@ -41,10 +51,20 @@ export function Contact() {
                                     'in between 10 to 30 characters'
                             }
                         })}/>
+                    { errors.subject ?
+                        <span className="error">{errors.subject.message}</span>
+                        : ''}
                 </div>
                 <div className="form-group">
                     <label>Message: </label>
-                    <textarea rows="5"/>
+                    <textarea rows={5}
+                        {...register('message', {
+                            required: true
+                        })}/>
+                    { errors.message ?
+                        <span className="error">
+                            Message is Required</span>
+                        : ''}
                 </div>
                 <button type="submit"
                       className="submit-btn">Submit</button>
