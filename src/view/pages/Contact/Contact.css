@@ -24,6 +24,7 @@ label {
     font-weight: bold;
     margin-bottom: 6px;
     color: #333;
+    font-size: 1.3rem;
 }
 
 input, textarea {
@@ -47,10 +48,10 @@ input:focus, textarea:focus {
 
 .submit-btn {
     padding: 12px;
-    background-color: #007bff;
+    background-color: #1f9e4b;
     color: white;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -58,5 +59,5 @@ input:focus, textarea:focus {
 }
 
 .submit-btn:hover {
-    background-color: #0056b3;
+    background-color: #15ad15;
 }

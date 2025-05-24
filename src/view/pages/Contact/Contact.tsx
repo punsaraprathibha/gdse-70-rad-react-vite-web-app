@@ -19,7 +19,7 @@ export function Contact() {
 
     return (
         <div className="form-container">
-            <h2>Contact Us</h2>
+            <h2 className="text-4xl font-bold text-green-500 underline decoration-4 mb-6">Contact Us</h2>
             <form className="contact-form"
                  onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
