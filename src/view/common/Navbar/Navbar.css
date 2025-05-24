@@ -31,6 +31,9 @@ li a:hover {
     border-radius: 10px;
     border-color: white;
     font-size: 2rem;
+    padding: 12px;
+    margin-left: 2rem;
+    float: right;
 }
 
 .btn-sign-in a {
@@ -46,6 +49,7 @@ li a:hover {
 .business-name {
     padding-left: 5px;
     color: white;
+    margin-right: 4rem;
 }
 .business-name:hover {
     color: #1f9e4b;
