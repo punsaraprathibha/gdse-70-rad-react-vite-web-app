@@ -1,6 +1,6 @@
 export function About() {
     return (
-        <div className="flex justify-center px-4 py-10 bg-white">
+        <div className="flex justify-center px-4 py-10">
             <div className="max-w-2xl w-full text-center">
                 <h2 className="text-4xl font-bold text-green-500 underline decoration-4 mb-6">
                     About Us
