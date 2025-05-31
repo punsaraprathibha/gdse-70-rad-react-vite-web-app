@@ -41,17 +41,17 @@ export function ModifyCart({ data }: ModifyCartProps) {
     }
 
     return (
-        <div className="w-full mt-1 p-[2.4px]
+        <div className="w-full mt-4 p-[2.4px]
                         text-[8px] text-center">
             <button className="float-left
                  text-[8px] bg-yellow-300
-                 rounded-lg h-3 w-4"
+                 rounded-lg h-5 w-5"
                  onClick={decreaseItemCount}>-</button>
             <small
                 className="text-[8px]">{itemCount}</small>
             <button className="float-right
                  text-[8px] bg-yellow-300
-                 rounded-lg h-3 w-4"
+                 rounded-lg h-5 w-5"
              onClick={increaseItemCount}>+</button>
         </div>
     );
