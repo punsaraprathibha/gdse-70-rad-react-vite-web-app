@@ -19,12 +19,5 @@
     "price": "150",
     "currency": "LKR",
     "image": "beans.png"
-  },
-  {
-    "id": 3,
-    "name": "Beans",
-    "price": "150",
-    "currency": "LKR",
-    "image": "beans.png"
   }
 ]

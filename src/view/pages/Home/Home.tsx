@@ -1,9 +1,17 @@
 import {useEffect, useState} from "react";
 import {Product} from "../../common/Product/Product.tsx";
 
+type ProductData = {
+    id: number;
+    name: string;
+    price: string;
+    currency: string;
+    image: string;
+};
+
 export function Home() {
     const [products, setProducts]
-        = useState([]);
+        = useState<ProductData[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,7 +34,7 @@ export function Home() {
                             justify-center items-center mx-auto">
                 {
                     products.map((product) => (
-                        <Product data={product}/>
+                        <Product key={product.id} data={product}/>
                     ))
                 }
             </div>
