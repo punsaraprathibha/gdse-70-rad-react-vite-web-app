@@ -1,4 +1,5 @@
-import spinach from "../../../assets/products/spinach.png";
+import {useState} from "react";
+import {ModifyCart} from "../ModifyCart/ModifyCart.tsx";
 
 type ProductData = {
     id: number,
@@ -20,6 +21,13 @@ export function Product( { data }: ProductProps) {
     console.log(`../../../assets/products/${data.image}`)
 
     const image = images[`../../../assets/products/${data.image}`];
+
+    const [isActive, setIsActive]
+        = useState(false);
+    const addToCart = () => {
+        setIsActive(true);
+    }
+
     return (
         <div className="w-28 h-32 mr-2 mb-2 justify-center items-center
                                border-gray-500 border-[0.5px]">
@@ -39,7 +47,18 @@ export function Product( { data }: ProductProps) {
                 </div>
             </div>
             <div className="flex justify-center">
-                <button className="w-full mt-1 p-[2.4px] bg-[#1f9e4b] text-[8px] text-white border-gray-500 border-[0.5px]">Add to Cart</button>
+                {
+                    isActive ? (
+                        <ModifyCart />
+                    ) : (
+                        <button className="w-full mt-1
+                p-[2.4px] bg-[#1f9e4b] text-[8px]
+                text-white border-gray-500
+                border-[0.5px]"
+                                onClick={addToCart}>
+                            Add to Cart</button>
+                    )
+                }
             </div>
         </div>
     );
