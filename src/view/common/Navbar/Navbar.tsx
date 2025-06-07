@@ -23,6 +23,9 @@ export function Navbar() {
                 <li className="mr-2 text-[1.5rem] text-[#e6f0e6] hover:text-green-400">
                     <Link to="/contact">Contact</Link>
                 </li>
+                <li className="mr-2 text-[1.5rem] text-[#e6f0e6] hover:text-green-400">
+                    <Link to="/shopping-cart">My-Cart</Link>
+                </li>
             </ul>
             <Link to="/login" className="text-[1.3rem] text-[#e6f0e6] bg-[#1f9e4b] p-3
                                pr-4 rounded-lg border-white border-2 hover:bg-green-400">

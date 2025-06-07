@@ -41,7 +41,7 @@ export function ShoppingCart({ itemsList } : ShoppingCartProps) {
                                     <td colSpan={5} className="
                                     border-green-300  p-2 bg-green-100">
                                         <p className="text-center
-                                         text-sm text-white">
+                                         text-sm text-green-700">
                                             No items to Display!</p>
                                     </td>
                                 </tr>
