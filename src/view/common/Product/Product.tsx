@@ -51,9 +51,7 @@ export function Product({data}: ProductProps) {
             <div className="flex justify-center">
                 {
                     isActive ? (
-                        <ModifyCart data={{
-                            product: data
-                        }}/>
+                        <ModifyCart data={data}/>
                     ) : (
                         <button className="w-full mt-4
                             p-[2.4px] bg-[#1f9e4b] text-[12px]

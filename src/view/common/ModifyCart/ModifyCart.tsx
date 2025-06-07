@@ -14,12 +14,12 @@ export function ModifyCart({ data }: ModifyCartProps) {
 
         const existingItem = itemsList
             .find(item =>
-            item.product.id === data.product.id);
+            item.product.id === data.id);
         if (existingItem) {
             existingItem.itemCount = itemCount;
         } else {
             itemsList.push({
-                product: data.product,
+                product: data,
                 itemCount: itemCount
             });
         }
