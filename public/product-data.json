@@ -19,5 +19,33 @@
     "price": "150",
     "currency": "LKR",
     "image": "beans.png"
+  },
+  {
+    "id": 4,
+    "name": "Pumpkin",
+    "price": "350",
+    "currency": "LKR",
+    "image": "pumpkin.png"
+  },
+  {
+    "id": 5,
+    "name": "Leaks",
+    "price": "100",
+    "currency": "LKR",
+    "image": "leeks.png"
+  },
+  {
+    "id": 6,
+    "name": "Papaya",
+    "price": "300",
+    "currency": "LKR",
+    "image": "papaya.png"
+  },
+  {
+    "id": 7,
+    "name": "Apple",
+    "price": "200",
+    "currency": "LKR",
+    "image": "apple.png"
   }
 ]

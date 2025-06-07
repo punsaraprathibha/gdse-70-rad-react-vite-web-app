@@ -57,7 +57,8 @@ export function Product({data}: ProductProps) {
                     ) : (
                         <button className="w-full mt-4
                             p-[2.4px] bg-[#1f9e4b] text-[12px]
-                            text-white border-gray-500 border-[0.5px] rounded-lg h-6"
+                            text-white border-gray-500 border-[0.5px] rounded-lg h-6
+                            cursor-pointer"
                                 onClick={addToCart}>Add to Cart
                         </button>
                     )
