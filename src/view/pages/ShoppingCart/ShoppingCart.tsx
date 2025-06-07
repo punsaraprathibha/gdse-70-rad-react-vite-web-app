@@ -46,7 +46,22 @@ export function ShoppingCart({ itemsList }) {
                                     </td>
                                 </tr>
                             ) : (
-
+                                itemsList.map((item, index) => (
+                                    <tr key={item.product.id}
+                                       className={`${index % 2 === 0 
+                                           ? "bg-green-100" 
+                                           : "bg-green-200" }
+                                           hover:bg-green-300
+                                           border border-green-300`}>
+                                        <td>{item.product.id}</td>
+                                        <td>{item.product.name}</td>
+                                        <td>{item.product.price}
+                                            {item.product.currency}</td>
+                                        <td>{item.itemCount}</td>
+                                        <td>{item.product.price * item.itemCount}
+                                            {item.product.currency}</td>
+                                    </tr>
+                                ))
                             )
                         }
                     </tbody>
