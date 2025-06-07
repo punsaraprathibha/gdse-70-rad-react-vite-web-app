@@ -8,7 +8,8 @@ import {itemsList} from "../ModifyCart/ModifyCart.tsx";
 
 export function MainContent() {
     return (
-        <div className="main-content">
+        <div className="flex justify-center
+                       items-center min-h-screen">
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/about" element={<About />}/>
