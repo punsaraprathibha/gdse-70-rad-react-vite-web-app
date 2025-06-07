@@ -53,12 +53,22 @@ export function ShoppingCart({ itemsList } : ShoppingCartProps) {
                                            : "bg-green-200" }
                                            hover:bg-green-300
                                            border border-green-300`}>
-                                        <td>{item.product.id}</td>
-                                        <td>{item.product.name}</td>
-                                        <td>{item.product.price}
+                                        <td className="text-xs
+                                                      border-green-300
+                                                      border p-2">{item.product.id}</td>
+                                        <td className="text-xs
+                                                      border-green-300
+                                                      border p-2">{item.product.name}</td>
+                                        <td className="text-xs
+                                                      border-green-300
+                                                      border p-2">{item.product.price}
                                             {item.product.currency}</td>
-                                        <td>{item.itemCount}</td>
-                                        <td>{item.product.price * item.itemCount}
+                                        <td className="text-xs
+                                                      border-green-300
+                                                      border p-2">{item.itemCount}</td>
+                                        <td className="text-xs
+                                                      border-green-300
+                                                      border p-2">{item.product.price * item.itemCount}
                                             {item.product.currency}</td>
                                     </tr>
                                 ))
