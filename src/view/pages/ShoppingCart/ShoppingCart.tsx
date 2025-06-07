@@ -3,7 +3,7 @@ import type {CartItem} from "../../../model/CartItem.ts";
 interface ShoppingCartProps {
     itemsList: CartItem[];
 }
-export function ShoppingCart({ itemsList }) {
+export function ShoppingCart({ itemsList } : ShoppingCartProps) {
     return (
         <div className="flex justify-center
                        items-center px-4">
