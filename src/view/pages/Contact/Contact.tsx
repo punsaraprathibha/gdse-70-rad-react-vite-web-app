@@ -18,8 +18,8 @@ export function Contact() {
     }
 
     return (
-        <div className="form-container">
-            <h2 className="text-4xl font-bold text-green-500 underline decoration-4 mb-6">Contact Us</h2>
+        <div className="form-container shadow-lg shadow-green-300 border border-green-400">
+            <h2 className="text-5xl font-bold text-green-500 underline decoration-4 mb-6">Contact Us</h2>
             <form className="contact-form"
                  onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
