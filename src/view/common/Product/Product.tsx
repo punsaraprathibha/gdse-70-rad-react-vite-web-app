@@ -17,11 +17,9 @@ const images: Record<string, string>
 export function Product({data}: ProductProps) {
     const image = images[`../../../assets/products/${data.image}`];
 
-    const dispatch
-        = useDispatch<AppDispatch>();
+    const dispatch = useDispatch<AppDispatch>();
 
-    const [isActive, setIsActive]
-        = useState(false);
+    const [isActive, setIsActive] = useState(false);
     const addToCart = () => {
         dispatch(addItemToCart(data));
         setIsActive(true);
