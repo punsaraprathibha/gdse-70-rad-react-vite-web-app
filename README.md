@@ -108,7 +108,7 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers: {
-        addItemToCart(state: CartState, action: PayloadAction<ProductData>) {
+        addItemToCart(state: CartState, action: PayloadAction<ProductData>) { // Please use PayloadAction<ProductData> to prevent the error
             const existingItem = state.items.find(
                 (item) => item.product.id === action.payload.id
             );
