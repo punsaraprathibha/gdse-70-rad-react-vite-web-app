@@ -114,25 +114,11 @@ const cartSlice = createSlice({
      if (!existingItem) {
          state.items.push({ product: action.payload, itemCount: 1 });
      }
-  },
-  increaseQuantity(state: CartState, action: ReturnType<number>) {
-   const item = state.items.find((existingItem) =>
-           existingItem.product.id === action.payload);
-   if (item) {
-    item.itemCount += 1
-   }
-  },
-  decreaseQuantity(state: CartState, action: ReturnType<number>) {
-   const item = state.items.find((existingItem) =>
-           existingItem.product.id === action.payload);
-   if (item && item.itemCount > 1) {
-    item.itemCount -= 1;
-   }
   }
  },
 });
 
-export const {  addItemToCart, increaseQuantity, decreaseQuantity } = cartSlice.actions;
+export const {  addItemToCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
 ```
