@@ -92,34 +92,37 @@ export function Product({data}: ProductProps) {
 
 4. Now, let's define `cartSlice.ts` file inside the `slices` folder by extracting Add/Modify cart related logic.
 ```typescript
-import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
 import type {CartItem} from "../model/CartItem.ts";
+import {createSlice} from "@reduxjs/toolkit";
+import type {PayloadAction} from "@reduxjs/toolkit";
 import type {ProductData} from "../model/ProductData.ts";
 
 interface CartState {
- items: CartItem[];
+    items: CartItem[];
 }
 const initialState: CartState = {
- items: [],
+    items: []
 };
+
 const cartSlice = createSlice({
- name: 'cart',
- initialState,
- reducers: {
-  addItemToCart(state: CartState, action: ReturnType<ProductData>) {
-     const existingItem = state.items.find(
-        (item) => item.product.id === action.payload.id
-     );
-     if (!existingItem) {
-         state.items.push({ product: action.payload, itemCount: 1 });
-     }
-  }
- },
+    name: 'cart',
+    initialState: initialState,
+    reducers: {
+        addItemToCart(state: CartState, action: PayloadAction<ProductData>) {
+            const existingItem = state.items.find(
+                (item) => item.product.id === action.payload.id
+            );
+            if (!existingItem) {
+                state.items.push({
+                    product: action.payload,
+                    itemCount: 1
+                })
+            }
+        }
+    }
 });
 
-export const {  addItemToCart } = cartSlice.actions;
-
+export const { addItemToCart } = cartSlice.actions;
 export default cartSlice.reducer;
 ```
 5. Now, let's update `store.ts` file as below to keep `ShoppingCart` related details.
