@@ -1,5 +1,8 @@
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import type {CartItem} from "../../../model/CartItem.ts";
+import {useDispatch} from "react-redux";
+import type {AppDispatch} from "../../../store/store.ts";
+import {decreaseQuantity, increaseQuantity} from "../../../slices/cartSlice.ts";
 
 interface ModifyCartProps {
     data: any
@@ -7,37 +10,24 @@ interface ModifyCartProps {
 
 export const itemsList:CartItem[] = [];
 export function ModifyCart({ data }: ModifyCartProps) {
+    const dispatch
+        = useDispatch<AppDispatch>();
     const [itemCount, setItemCount]
         = useState(1);
 
-    useEffect(() => {
-
-        const existingItem = itemsList
-            .find(item =>
-            item.product.id === data.id);
-        if (existingItem) {
-            existingItem.itemCount = itemCount;
-        } else {
-            itemsList.push({
-                product: data,
-                itemCount: itemCount
-            });
-        }
-        console.log(itemsList);
-    }, [itemCount, data])
     const decreaseItemCount = () => {
-        setItemCount(prevValue =>
-            prevValue > 1
-                ? prevValue - 1
-                : (alert("Item count can't " +
-                        "be less than 1"),
-                        prevValue
-                )
-        )
+        if (itemCount > 1) {
+            setItemCount((prev) => prev - 1);
+            dispatch(decreaseQuantity(data.id));
+        } else {
+            alert("Item Count can't be less than 1");
+        }
     }
     const increaseItemCount = () => {
-        setItemCount(prvCount =>
-            prvCount + 1)
+        // setItemCount(prvCount =>
+        //     prvCount + 1)
+        setItemCount((prev) => prev + 1);
+        dispatch(increaseQuantity(data.id));
     }
 
     return (
