@@ -1,9 +1,10 @@
-import type {CartItem} from "../../../model/CartItem.ts";
+import {useSelector} from "react-redux";
+import type {RootState} from "../../../store/store.ts";
 
-interface ShoppingCartProps {
-    itemsList: CartItem[];
-}
-export function ShoppingCart({ itemsList } : ShoppingCartProps) {
+export function ShoppingCart() {
+    const {items} = useSelector(
+        (state: RootState) => state.cart);
+
     return (
         <div className="flex justify-center
                        items-center px-4">
@@ -36,7 +37,7 @@ export function ShoppingCart({ itemsList } : ShoppingCartProps) {
                     </thead>
                     <tbody>
                         {
-                            itemsList.length === 0 ? (
+                            items.length === 0 ? (
                                 <tr>
                                     <td colSpan={5} className="border-green-300 p-2 bg-green-100">
                                         <p className="text-center text-2xl text-green-700">
@@ -44,7 +45,7 @@ export function ShoppingCart({ itemsList } : ShoppingCartProps) {
                                     </td>
                                 </tr>
                             ) : (
-                                itemsList.map((item, index) => (
+                                items.map((item, index) => (
                                     <tr key={item.product.id}
                                        className={`${index % 2 === 0 
                                            ? "bg-green-100" 

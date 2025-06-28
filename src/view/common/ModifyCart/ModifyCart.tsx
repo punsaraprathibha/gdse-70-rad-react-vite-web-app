@@ -1,5 +1,4 @@
 import { useState} from "react";
-import type {CartItem} from "../../../model/CartItem.ts";
 import {useDispatch} from "react-redux";
 import type {AppDispatch} from "../../../store/store.ts";
 import {decreaseQuantity, increaseQuantity} from "../../../slices/cartSlice.ts";
@@ -8,7 +7,6 @@ interface ModifyCartProps {
     data: any
 }
 
-export const itemsList:CartItem[] = [];
 export function ModifyCart({ data }: ModifyCartProps) {
     const dispatch
         = useDispatch<AppDispatch>();
