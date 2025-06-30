@@ -1,4 +1,50 @@
-8. Now, let's update `ModifyCart.tsx` as below to update the existing item count.
+8. Now, let's define `cartSlice.ts` file inside the `slices` folder by extracting Add/Modify cart related logic.
+```typescript
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type {CartItem} from "../model/CartItem.ts";
+import type {ProductData} from "../model/ProductData.ts";
+
+interface CartState {
+ items: CartItem[];
+}
+const initialState: CartState = {
+ items: [],
+};
+const cartSlice = createSlice({
+ name: 'cart',
+ initialState,
+ reducers: {
+  addItemToCart(state: CartState, action: ReturnType<ProductData>) {
+     const existingItem = state.items.find(
+        (item) => item.product.id === action.payload.id
+     );
+     if (!existingItem) {
+         state.items.push({ product: action.payload, itemCount: 1 });
+     }
+  },
+  increaseQuantity(state: CartState, action: ReturnType<number>) {
+   const item = state.items.find((existingItem) =>
+           existingItem.product.id === action.payload);
+   if (item) {
+    item.itemCount += 1
+   }
+  },
+  decreaseQuantity(state: CartState, action: ReturnType<number>) {
+   const item = state.items.find((existingItem) =>
+           existingItem.product.id === action.payload);
+   if (item && item.itemCount > 1) {
+    item.itemCount -= 1;
+   }
+  }
+ },
+});
+
+export const {  addItemToCart, increaseQuantity, decreaseQuantity } = cartSlice.actions;
+
+export default cartSlice.reducer;
+```
+9. Now, let's update `ModifyCart.tsx` as below to update the existing item count.
 ```typescript jsx
 import { useState } from "react";
 import { decreaseQuantity, increaseQuantity} from "../../../slices/cartSlice";
