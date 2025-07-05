@@ -17,8 +17,7 @@ export const getAllProducts = createAsyncThunk(
     async () => {
         // const response = await fetch('./product-data.json');
         // return await response.json();
-        const response
-            = await backendApi.get("/products/all");
+        const response = await backendApi.get("/products/all");
         return await response.data;
     }
 )
