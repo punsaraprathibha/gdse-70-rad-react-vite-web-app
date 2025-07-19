@@ -5,8 +5,7 @@ import {useEffect, useState} from "react";
 
 export function Navbar() {
     const [username, setUsername] = useState<string | null>(null);
-    const [role, setRole]
-        = useState<string | null>(null);
+    const [role, setRole] = useState<string | null>(null);
     useEffect(() => {
         const storedUserName = localStorage.getItem("username");
         const storedRole = localStorage.getItem("role");
@@ -20,8 +19,7 @@ export function Navbar() {
             <div className="flex p-2">
                 <h1 className="text-3xl text-[#e6f0e6] hover:text-green-400">
                     Organic Shop</h1>
-                <img className="h-[2.5rem] w-[2.5rem] ml-2 pt-1" src={icon}
-                     alt=""/>
+                <img className="h-[2.5rem] w-[2.5rem] ml-2 pt-1" src={icon} alt=""/>
             </div>
             <ul className="list-none flex mt-2 mb-2">
                 {
@@ -47,8 +45,7 @@ export function Navbar() {
                 <p className="text-2xl text-white">{username}</p>
             ) : (
                 <Link to="/login" className="text-[1.5rem] text-[#e6f0e6] bg-[#1f9e4b] py-3 px-6
-                               rounded-lg border-white border-2 hover:bg-green-400">
-                    Sign In</Link>
+                               rounded-lg border-white border-2 hover:bg-green-400">Sign In</Link>
             )}
         </div>
     );
