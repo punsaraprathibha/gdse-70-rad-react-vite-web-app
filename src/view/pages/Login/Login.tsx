@@ -88,7 +88,11 @@ export function Login() {
             localStorage.setItem('role', user.role as string);
 
             alert("Successfully logged in!");
-            navigate('/');
+            if (user.role === 'customer') {
+                navigate('/');
+            } else if (user.role === 'admin') {
+                navigate('/admin-panel')
+            }
         } catch (error) {
             console.error(error);
             alert("Login failed");

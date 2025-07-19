@@ -40,6 +40,18 @@ export function Navbar() {
                         </>
                     )
                 }
+
+                {/* Admin-only links */}
+                {role === 'admin' && (
+                    <>
+                        <li className="text-[1.9rem] text-[#e6f0e6] hover:text-green-400">
+                            <Link to="/admin-panel">Admin Panel</Link>
+                        </li>
+                        <li className="text-[1.9rem] text-[#e6f0e6] hover:text-green-400">
+                            <Link to="/manage-products">Manage Products</Link>
+                        </li>
+                    </>
+                )}
             </ul>
             {username ? (
                 <p className="text-2xl text-white">{username}</p>
