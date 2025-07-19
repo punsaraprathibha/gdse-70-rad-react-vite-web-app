@@ -57,6 +57,8 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { backendApi } from "../../../api.ts";
+import {getUserFromToken} from "../../../auth/auth.ts";
+import type {UserData} from "../../../model/UserData.ts";
 
 type FormData = {
     username: string;
@@ -80,6 +82,10 @@ export function Login() {
 
             localStorage.setItem('token', accessToken);
             localStorage.setItem('refreshToken', refreshToken);
+
+            const user:UserData = getUserFromToken(accessToken);
+            localStorage.setItem('username', user.username as string);
+            localStorage.setItem('role', user.role as string);
 
             alert("Successfully logged in!");
             navigate('/');
